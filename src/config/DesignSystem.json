@@ -1,0 +1,42 @@
+{
+  "fonts": {
+    "primary": "Inter"
+  },
+  "color": {
+    "black": {
+      "text": "#1A1A1A",
+      "icon": "#383838",
+      "medium": "#454545"
+    },
+    "pink": {
+      "span": "#EA499B",
+      "light": "#FFF1F8"
+    },
+    "blue": {
+      "span": "#496CEA",
+      "icon": "#5350ED",
+      "primary": "#012AFE",
+      "light": "#E7EAFF"
+    },
+    "green": {
+      "span": "#49EA9D",
+      "icon": "#0AB383"
+    },
+    "gray": {
+      "label": "#868A8F",
+      "semi_medium": "#9FA3A6",
+      "medium": "#737F88",
+      "light": "#F5F5F5",
+      "semi_ligth": "#F8F8F8",
+      "transitions": "#D2DFEC",
+      "indicator": "#4D616E"
+    },
+    "red": {
+      "alert": "#EA4949"
+    },
+    "yellow": {
+      "primary": "#EAC749",
+      "light": "#FFF8E0"
+    }
+  }
+}
