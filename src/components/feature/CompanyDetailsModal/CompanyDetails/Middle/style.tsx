@@ -48,4 +48,20 @@ export const FileArea = styled.div`
   p {
     margin-top: 0;
   }
+
+  input::-webkit-file-upload-button {
+    font-family: ${DesignSystem.fonts.primary};
+    padding: 14px 50px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid ${DesignSystem.color.blue.primary};
+    color: ${DesignSystem.color.blue.primary};
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  input {
+    width: 100%;
+    font-family: ${DesignSystem.fonts.primary};
+  }
 `;

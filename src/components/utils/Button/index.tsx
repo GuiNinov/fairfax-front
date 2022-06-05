@@ -12,4 +12,10 @@ export const Button = styled.button`
     background-color: ${DesignSystem.color.blue.primary};
     color: #fff;
   }
+
+  &.soft {
+    border: none;
+    background-color: ${DesignSystem.color.blue.icon};
+    color: #fff;
+  }
 `;

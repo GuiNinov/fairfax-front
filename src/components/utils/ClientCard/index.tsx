@@ -23,33 +23,36 @@ export default function Card(props: { company: any }) {
   };
 
   return (
-    <CardArea
-      onClick={() => {
-        dispatch(actions.page.selectCompany(props.company));
-        dispatch(actions.page.openCompanyDetails());
-      }}
-    >
-      <Span className={props.company.priority}>
-        {renderSpanText(props.company.priority)}
-      </Span>
-      <h4>
-        {props.company.basic_data.conteudo.nome_fantasia
-          ? props.company.basic_data.conteudo.nome_fantasia
-          : props.company.basic_data.conteudo.nome_receita}
-      </h4>
-      <br />
-      <Row>
-        <img src={__dirname + './calendar-gray.svg'} />
-        <label>{formatDate(props.company.created_at)}</label>
-      </Row>
-      <Row style={{ marginTop: 5 }} className="space-between">
-        <img src={__dirname + './people.svg'} />
+    props.company &&
+    props.company.basic_data && (
+      <CardArea
+        onClick={() => {
+          dispatch(actions.page.selectCompany(props.company));
+          dispatch(actions.page.openCompanyDetails());
+        }}
+      >
+        <Span className={props.company.priority ? props.company.priority : ''}>
+          {props.company.priority && renderSpanText(props.company.priority)}
+        </Span>
+        <h4>
+          {props.company.basic_data.conteudo.nome_fantasia
+            ? props.company.basic_data.conteudo.nome_fantasia
+            : props.company.basic_data.conteudo.nome_receita}
+        </h4>
+        <br />
         <Row>
-          <img src={__dirname + './clips.svg'} />
-          <label>3</label>
+          <img src={__dirname + './calendar-gray.svg'} />
+          <label>{formatDate(props.company.created_at)}</label>
         </Row>
-      </Row>
-    </CardArea>
+        <Row style={{ marginTop: 5 }} className="space-between">
+          <img src={__dirname + './people.svg'} />
+          <Row>
+            <img src={__dirname + './clips.svg'} />
+            <label>3</label>
+          </Row>
+        </Row>
+      </CardArea>
+    )
   );
 }
 

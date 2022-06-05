@@ -10,8 +10,11 @@ export default function Home() {
   return (
     <Layout>
       <CompanyDetailsModal />
+
       <AddCardModal />
+
       <LeftSideBar />
+
       <Col style={{ width: '100%' }}>
         <HomeHeader />
         <HomeContent />

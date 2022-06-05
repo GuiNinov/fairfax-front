@@ -23,7 +23,11 @@ export default function RightSide() {
   };
   return (
     company &&
-    company.basic_data && (
+    company.basic_data &&
+    company.processos_qsa &&
+    company.activity &&
+    company.spc &&
+    company.protesto && (
       <div>
         <h2>
           {company.basic_data.conteudo.nome_fantasia

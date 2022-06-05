@@ -6,6 +6,20 @@ export const Container = styled.div`
   max-width: 1000px;
   overflow-x: scroll;
   transform: rotate(180deg);
+  &::-webkit-scrollbar {
+    height: 12px;
+    border-radius: 120px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${DesignSystem.color.gray.transitions};
+    border-radius: 120px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${DesignSystem.color.blue.primary};
+    border-radius: 120px;
+  }
   @media only screen and (min-width: 1400px) {
     max-width: 1100px;
   }
@@ -45,7 +59,6 @@ export const Content = styled.div`
   transform: rotate(180deg);
   padding: 40px;
   min-height: 1050px;
-  border-top: 2px solid ${DesignSystem.color.gray.transitions};
   width: fit-content;
 `;
 
