@@ -4,8 +4,11 @@ import { Row } from '../../utils/Row';
 import { Button } from '../../utils/Button';
 import { useSelector } from 'react-redux';
 import iUser from '../../../interfaces/User';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../../state';
 export default function HomeHeader() {
   const user: iUser = useSelector((state: any) => state.user.data);
+  const dispatch: any = useDispatch();
 
   return (
     <Container>
@@ -24,7 +27,14 @@ export default function HomeHeader() {
             {user.name}
           </Row>
           <br />
-          <Button className="primary">+ ADD EMPRESA</Button>
+          <Button
+            className="primary"
+            onClick={() => {
+              dispatch(actions.page.openAddCard());
+            }}
+          >
+            + ADD EMPRESA
+          </Button>
         </LeftSide>
       </Row>
     </Container>

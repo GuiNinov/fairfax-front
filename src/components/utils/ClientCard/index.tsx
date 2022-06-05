@@ -6,8 +6,9 @@ import DesignSystem from '../../../config/DesignSystem.json';
 import iCompany from '../../../interfaces/Company';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../../state';
+import { formatDate } from '../../../helpers/formatDate';
 
-export default function Card(props: { company: iCompany }) {
+export default function Card(props: { company: any }) {
   const dispatch: any = useDispatch();
 
   const renderSpanText = (priority: string) => {
@@ -31,11 +32,15 @@ export default function Card(props: { company: iCompany }) {
       <Span className={props.company.priority}>
         {renderSpanText(props.company.priority)}
       </Span>
-      <h4>{props.company.name}</h4>
+      <h4>
+        {props.company.basic_data.conteudo.nome_fantasia
+          ? props.company.basic_data.conteudo.nome_fantasia
+          : props.company.basic_data.conteudo.nome_receita}
+      </h4>
       <br />
       <Row>
         <img src={__dirname + './calendar-gray.svg'} />
-        <label>{props.company.date}</label>
+        <label>{formatDate(props.company.created_at)}</label>
       </Row>
       <Row style={{ marginTop: 5 }} className="space-between">
         <img src={__dirname + './people.svg'} />
@@ -54,6 +59,7 @@ export const CardArea = styled.div`
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px #00000026;
   margin-bottom: 25px;
+  height: 190px;
   cursor: pointer;
   label {
     color: ${DesignSystem.color.gray.label};

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { formatDate, handlePhase } from '../../../../../helpers/formatDate';
 import { Row } from '../../../../utils/Row';
 import {
   Container,
@@ -7,14 +9,19 @@ import {
   MiddleContent,
   FileArea,
 } from './style';
+
 export default function Middle() {
+  const company: any = useSelector((state: any) => state.page.selected_company);
+
   return (
     <Container>
       <MiddleHeader>
         <Row className="space-between">
           <p>
             Fase atual:{' '}
-            <HeaderSpan className="phase">Solicitar Dados</HeaderSpan>
+            <HeaderSpan className="phase">
+              {handlePhase(Number(company.phase))}
+            </HeaderSpan>
           </p>
           <p>
             Score de aprovação:{' '}
@@ -28,7 +35,7 @@ export default function Middle() {
             <img src={__dirname + './green-check.svg'} />
             <p>Início do contato</p>
           </Row>
-          <p>20/05/2022</p>
+          <p>{formatDate(company.created_at)}</p>
         </Row>
         <img src={__dirname + './line-1.svg'} />
         <Row className="space-between">

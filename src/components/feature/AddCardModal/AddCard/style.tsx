@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 7.5%;
+  margin-top: 1%;
   padding: 35px;
 `;
 export const FormArea = styled.div`
