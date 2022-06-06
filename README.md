@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# DATASURANCE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👩‍🚒 Esse é o repositório do **Datasurance**, solução desenvolvida pelo time 20 no [FF Hacka](https://ffhacka.com.br/), que nos desafiou a **criar ferramentas que permitam a leitura e captação de dados de documentos para o preenchimento automatizado de apólices**.
 
-## Available Scripts
+O **Datasurance** é uma plataforma online para subscritores e seguradoras.
+Nela, o subscritor faz o envio de documentos, como PDFs e planilhas, e o sistema automaticamente identifica, organiza e armazena todos os dados na nuvem. Conectada com APIs externas, a plataforma também busca de maneira instantânea outras informações adicionais importantes para o processo de análise, como score de crédito, quadro societário, processos criminais etc.
+A partir dos dados coletados, **o sistema gera um Score de Risco** para a empresa segurada, que pode ser **customizado de acordo com o tipo de risco de cada seguradora**.
 
-In the project directory, you can run:
+Com todos os dados de pedidos de cotação, a Datasurance apresenta **uma ferramenta para criar Dashboards personalizados**. Possibilitando detalhar quais motivos levaram a recusa/aceitação de cada cotação de seguro.
+Dessa forma, a Seguradora consegue ter uma visão ampla do que está acontecendo no tático e pode **tomar decisões estratégicas para atingir outros mercados**.
 
-### `yarn start`
+**Capture, centralize, gerencie. Todos os dados de seguros em um só lugar!**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Watch the video](https://imgur.com/gallery/2ofUq0S)](https://www.youtube.com/watch?v=zwz39qm6B1Y&ab_channel=Akira)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tecnologias Utilizadas na Codificação
 
-### `yarn test`
+- [VSCode](https://code.visualstudio.com/) - IDE para Python e React
+- [Amazon Textract](https://aws.amazon.com/pt/textract/) - OCR Flexivel
+- [Tesseract](https://pypi.org/project/pytesseract/) - Wrapper do OCR Tesseract para Python
+- [React JS](https://pt-br.reactjs.org/) - Biblioteca para Front end em Java Script
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ferramentas de Design utilizadas
 
-### `yarn build`
+- [Miro](https://miro.com/) - Ideação e Canvas (Mais voltado para o usuário)
+- [Notion](https://www.notion.so/) - Documentação do projeto e Gestão das atividades
+- [Figma](https://www.figma.com/) - Prototipação de telas
+- [VideoScribe](https://www.videoscribe.co/en) - Editor de vídeo
+- [iMovie](https://www.apple.com/imovie/) - Editor de vídeo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Link com os protótipos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Protótipo da página web - [Figma](https://www.figma.com/file/SD21QtDxswYP4WcuVbXWLt/Hackathon-FF?node-id=0%3A1)
+- Vídeo demo da plataforma - [Youtube](https://youtu.be/DFUBgkPXdso)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Um pouco sobre a nossa equipe
 
-### `yarn eject`
+### Vinicius Schroeder | Business [(Linkedin)](https://www.linkedin.com/in/vinicius-schroeder/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Tecnologia e empreendedorismo sempre estiveram presentes na minha vida. Possuo experiências profissionais em uma corretora de seguros, uma venture builder e em boutiques de M&A. Durante minha trajetória, tive muito contato com startups, onde pude perceber a importância da tecnologia para resolver problemas do dia a dia.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Carlos Schwabe | Development [(Linkedin)](https://www.linkedin.com/in/carlos-schwabe/) [(GitHub)](https://github.com/carlos-schwabe)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Graduado em Engenharia Aeronáutica pela USP, e um apaixonado por tecnologia e empreendedorismo. Desde pequeno é apaixonado por inovação e pretende deixar o mundo um melhor lugar para se viver!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Flavio Akira Tsukamoto | Design UI/UX [(Linkedin)](https://www.linkedin.com/in/akiratsu/) [(GitHub)](https://github.com/akirapresident)
 
-## Learn More
+Envolvido no mundo das startups, busca sempre contribuir com projetos que ajudem a impactar positivamente a sociedade. Com conhecimentos nas áreas de business e design, ajuda a alinhar as necessidades dos usuários com soluções inteligentes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Guilherme Ninov | Development [(Linkedin)](https://www.linkedin.com/in/guilherme-ninov/) [(Github)](https://github.com/GuiNinov)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Estudante de Engenharia Mecânica, Guilherme é apaixonado em resolver problema do dia a dia de outras pessoas. É um hacker desde pequeno e está sempre construindo soluções tecnológicas!
+
+### Vitor Soares | Marketing [(Linkedin)](https://www.linkedin.com/in/vitorsoaresdasilva/) [(GitHub)] (https://github.com/Vitor-Soares-da-Silva)
+
+Ávido em resolver problemas desde sempre, me considero um profissional generalista. Tenho experiências diversas, desde serviços autônomos a cargos em indústrias multinacionais. Atualmente imerso no mundo de startups.
