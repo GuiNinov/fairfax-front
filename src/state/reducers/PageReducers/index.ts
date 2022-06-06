@@ -5,6 +5,7 @@ const initialState = {
   company_details: false,
   selected_company: {},
   add_card: false,
+  cartao_cnpj: false,
 };
 
 const pageReducer = (
@@ -28,6 +29,12 @@ const pageReducer = (
     }
     case pageDefs.home.add_card.close: {
       return { ...state, add_card: false };
+    }
+    case pageDefs.home.cartao_cnpj.open: {
+      return { ...state, cartao_cnpj: true };
+    }
+    case pageDefs.home.cartao_cnpj.close: {
+      return { ...state, cartao_cnpj: false };
     }
     default:
       return state;

@@ -52,10 +52,10 @@ export default function DashContent() {
               heightRelativeToValue={true}
               chartHeight={75}
               data={[
-                { name: 'Interessadas ', value: interesse.length },
-                { name: 'Solicitar dados', value: solDados.length },
-                { name: 'Analisar dados', value: analDados.length },
-                { name: 'Cotações enviadas', value: cot.length },
+                { value: interesse.length },
+                { value: solDados.length },
+                { value: analDados.length },
+                { value: cot.length },
               ]}
               pallette={['#A7BFF4', '#7C9EF2', '#507EEC', '#235EE7']}
               // pallette={}
@@ -68,6 +68,16 @@ export default function DashContent() {
             <p>Cotações enviadas {cot && `(${cot.length})`}</p>
           </Col>
         </Row>
+        <br />
+        <div style={{ textAlign: 'center' }}>
+          <h3 style={{ textAlign: 'left' }}>Localização</h3>
+          <img src={__dirname + './first-graph.svg'} />
+        </div>
+        <br />
+        <div>
+          <h3>Faturamento</h3>
+          <img src={__dirname + './second-graph.svg'} />
+        </div>
       </div>
     </Container>
   );

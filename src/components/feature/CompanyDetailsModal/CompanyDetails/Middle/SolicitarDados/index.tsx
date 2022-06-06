@@ -1,14 +1,18 @@
-import React, { useRef, useState, useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import { postRequest, putRequest } from '../../../../../../config/apiRequest';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRequest, putRequest } from '../../../../../../config/apiRequest';
 import { formatDate } from '../../../../../../helpers/formatDate';
 import { Button } from '../../../../../utils/Button';
 import { Row } from '../../../../../utils/Row';
 import { FileArea } from '../style';
+import { actions } from '../../../../../../state';
 export default function SolicitarDados() {
   const company: any = useSelector((state: any) => state.page.selected_company);
+
+  const dispatch: any = useDispatch();
+
   const [fileField, setFileField]: any = useState();
-  console.log(company);
+
   const [disabled, setDisabled] = useState(false);
 
   const handleImageChange = function (e: React.ChangeEvent<HTMLInputElement>) {
@@ -30,9 +34,11 @@ export default function SolicitarDados() {
     try {
       const req = await putRequest('/company/' + company.id, formData);
       console.log(req);
+      const get = await getRequest('/company/' + company.id);
+      dispatch(actions.page.selectCompany(get.content[0]));
       alert('PDF Adicionado e lido com sucesso');
       setDisabled(false);
-      window.location.reload();
+      dispatch(actions.page.openCartaoCnpj());
     } catch (error: any) {
       alert('Erro ao analisar o PDF, tente novamente');
       setDisabled(false);
@@ -73,7 +79,10 @@ export default function SolicitarDados() {
             paddingBottom: 10,
           }}
         >
-          <Row className="space-between">
+          <Row
+            className="space-between"
+            onClick={() => dispatch(actions.page.openCartaoCnpj())}
+          >
             <Row>
               <img
                 src={

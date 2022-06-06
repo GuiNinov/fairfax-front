@@ -6,12 +6,15 @@ import { Col } from '../../components/utils/Col';
 import HomeContent from '../../components/content/Home/HomeContent';
 import CompanyDetailsModal from '../../components/feature/CompanyDetailsModal';
 import AddCardModal from '../../components/feature/AddCardModal';
+import CartaoCnpj from '../../components/feature/CartaoCnpj';
 export default function Home() {
   return (
     <Layout>
       <CompanyDetailsModal />
 
       <AddCardModal />
+
+      <CartaoCnpj />
 
       <LeftSideBar />
 

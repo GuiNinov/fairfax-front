@@ -49,3 +49,19 @@ export const closeAddCard = () => {
     });
   };
 };
+
+export const openCartaoCnpj = () => {
+  return (dispatch: Dispatch) => {
+    dispatch({
+      type: pageDefs.home.cartao_cnpj.open,
+    });
+  };
+};
+
+export const closeCartaoCnpj = () => {
+  return (dispatch: Dispatch) => {
+    dispatch({
+      type: pageDefs.home.cartao_cnpj.close,
+    });
+  };
+};

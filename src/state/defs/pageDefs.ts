@@ -12,5 +12,9 @@ export const pageDefs = {
       open: 'OPEN_ADD_CARD_MODAL',
       close: 'CLOSE_ADD_CARD_MODAL',
     },
+    cartao_cnpj: {
+      open: 'OPEN_CARTAO_CNPJ_MODAL',
+      close: 'CLOSE_CARTAO_CNPJ_MODAL',
+    },
   },
 };
