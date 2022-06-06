@@ -18,4 +18,10 @@ export const Button = styled.button`
     background-color: ${DesignSystem.color.blue.icon};
     color: #fff;
   }
+
+  &.disabled {
+    border: none;
+    background-color: ${DesignSystem.color.gray.semi_ligth};
+    color: #fff;
+  }
 `;

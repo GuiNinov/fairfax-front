@@ -63,5 +63,9 @@ export const FileArea = styled.div`
   input {
     width: 100%;
     font-family: ${DesignSystem.fonts.primary};
+
+    &.mail-file {
+      width: 60%;
+    }
   }
 `;

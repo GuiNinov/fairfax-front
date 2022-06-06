@@ -1,7 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { formatDate } from '../../../../../../helpers/formatDate';
+import { Button } from '../../../../../utils/Button';
 import { Row } from '../../../../../utils/Row';
+import { FileArea } from '../style';
+import { MailArea } from './styled';
 
 export default function Cotacoes() {
   const company: any = useSelector((state: any) => state.page.selected_company);
@@ -61,9 +64,49 @@ export default function Cotacoes() {
       <Row className="space-between">
         <Row>
           <img src={__dirname + './solicitar-dados.svg'} />
-          <p style={{ color: '#496CEA' }}>Enviar cotações</p>
+          <p>Enviar cotações</p>
         </Row>
         <p>{'07/06/2022'}</p>
+      </Row>
+      <Row>
+        <img src={__dirname + './lastline.svg'} />
+        <div>
+          <MailArea>
+            <Row>
+              <label>De:</label>
+              <p>akira@fairfax.com</p>
+            </Row>
+          </MailArea>
+
+          <MailArea>
+            <Row>
+              <label>Para:</label>
+              <p>pedro@empresa.com.br</p>
+            </Row>
+          </MailArea>
+
+          <MailArea>
+            <Row>
+              <p>
+                Olá Pedro, tudo certo por ai? Segue aqui as cotações do seu
+                seguro.
+              </p>
+            </Row>
+          </MailArea>
+          <FileArea>
+            <p style={{ fontSize: 18 }}>Envio de documento</p>
+            <Row className="space-between">
+              <input
+                type="file"
+                className="mail-file"
+                // ref={fileField}
+                required
+                // disabled={disabled}
+              />
+              <Button className="soft">Enviar cotações</Button>
+            </Row>
+          </FileArea>
+        </div>
       </Row>
     </div>
   );

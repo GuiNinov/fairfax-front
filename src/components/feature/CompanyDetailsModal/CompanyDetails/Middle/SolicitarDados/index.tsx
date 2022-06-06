@@ -1,21 +1,41 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { postRequest, putRequest } from '../../../../../../config/apiRequest';
 import { formatDate } from '../../../../../../helpers/formatDate';
 import { Button } from '../../../../../utils/Button';
 import { Row } from '../../../../../utils/Row';
 import { FileArea } from '../style';
 export default function SolicitarDados() {
   const company: any = useSelector((state: any) => state.page.selected_company);
-  const fileField: any = useRef();
+  const [fileField, setFileField]: any = useState();
+  console.log(company);
+  const [disabled, setDisabled] = useState(false);
 
-  const [disabled, setDisabled] = useState();
+  const handleImageChange = function (e: React.ChangeEvent<HTMLInputElement>) {
+    const fileList = e.target.files;
 
-  const handleSubmit = () => {
-    const fData = new FormData();
-    if (fileField.current.files.length > 0) {
-      for (let i = 0; i < fileField.current.files.length; i++) {
-        fData.append('file', fileField.current.files[i]);
-      }
+    if (!fileList) return;
+
+    setFileField(fileList[0]);
+  };
+
+  // line above ^ gives me the error below
+
+  const handleSubmit = async () => {
+    setDisabled(true);
+    const formData = new FormData();
+    if (fileField) {
+      formData.append('file', fileField);
+    }
+    try {
+      const req = await putRequest('/company/' + company.id, formData);
+      console.log(req);
+      alert('PDF Adicionado e lido com sucesso');
+      setDisabled(false);
+      window.location.reload();
+    } catch (error: any) {
+      alert('Erro ao analisar o PDF, tente novamente');
+      setDisabled(false);
     }
   };
 
@@ -55,38 +75,54 @@ export default function SolicitarDados() {
         >
           <Row className="space-between">
             <Row>
-              <img src={__dirname + './check-off.svg'} />
+              <img
+                src={
+                  company.cartao_cnpj != null
+                    ? __dirname + './green-check.svg'
+                    : __dirname + './check-off.svg'
+                }
+              />
               <p>Cartão CNPJ</p>
             </Row>
             <img src={__dirname + './girl.svg'} />
           </Row>
-          <div
-            style={{
-              borderBottom: '2px solid #D9DBDF',
-              width: '100%',
-              paddingBottom: 10,
-            }}
-          >
-            {fileField && (
+          {company.cartao_cnpj == null && (
+            <div
+              style={{
+                borderBottom: '2px solid #D9DBDF',
+                width: '100%',
+                paddingBottom: 10,
+              }}
+            >
               <FileArea>
                 <p style={{ fontSize: 18 }}>Envio de documento</p>
-                {fileField.current && fileField.current.files.length > 0 ? (
-                  <></>
+
+                <input
+                  type="file"
+                  className="file"
+                  onChange={handleImageChange}
+                  required
+                  disabled={disabled}
+                />
+
+                <br />
+                <br />
+                {disabled ? (
+                  <p>Fazendo a leitura do PDF...</p>
                 ) : (
-                  <input
-                    type="file"
-                    className="file"
-                    ref={fileField}
-                    required
+                  <Button
+                    className={disabled ? 'disabled' : 'soft'}
                     disabled={disabled}
-                  />
+                    onClick={() => {
+                      handleSubmit();
+                    }}
+                  >
+                    ENVIAR ARQUIVO
+                  </Button>
                 )}
-                <br />
-                <br />
-                <Button className="soft">ENVIAR ARQUIVO</Button>
               </FileArea>
-            )}
-          </div>
+            </div>
+          )}
           <div
             style={{
               borderBottom: '2px solid #D9DBDF',
